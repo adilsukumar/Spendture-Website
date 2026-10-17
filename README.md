@@ -98,7 +98,7 @@ spendture-website/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/adilsukumar/Spendture_Website.git
+   git clone https://github.com/adilsukumar/Spendture-Website.git
    cd Spendture_Website
    ```
 
