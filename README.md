@@ -2,6 +2,8 @@
 
 <p align="center"><a href="#the-website-i-built">Overview</a> · <a href="#from-interest-to-waitlist">Workflow</a> · <a href="#how-the-pieces-connect">Architecture</a> · <a href="#run-locally">Run locally</a> · <a href="#current-implementation-notes">Scope</a> · <a href="#explore-the-source">Source</a></p>
 
+<a id="the-website-i-built"></a>
+
 ## <img src="assets/readme/icon-launch.svg" width="30" height="30" alt=""/> The website I built
 
 This repository holds the pre-launch website for Spendture: a place to introduce the financial-management product idea, explain its direction and collect interest through a waitlist. I built the experience with animated sections, theme controls, signup feedback and sharing prompts.
@@ -12,6 +14,8 @@ This repository holds the pre-launch website for Spendture: a place to introduce
 
 The site includes product teasers, FAQs, a floating call to action, loading and confirmation states, social sharing, and admin/dashboard interfaces. Those interfaces do not establish that the full Spendture finance platform is implemented here.
 
+<a id="from-interest-to-waitlist"></a>
+
 ## <img src="assets/readme/icon-mail.svg" width="30" height="30" alt=""/> From interest to waitlist
 
 <p><picture><source media="(max-width: 600px)" srcset="assets/readme/workflow-mobile.svg"/><img src="assets/readme/workflow.svg" width="100%" alt="Explore the product, submit the form, attempt a Sheets append, and show confirmation."/></picture></p>
@@ -19,6 +23,8 @@ The site includes product teasers, FAQs, a floating call to action, loading and 
 The waitlist endpoint accepts name and email, with additional age, location, role and referral fields. It uses a Google service account to append records to the `Waitlist` sheet. Confirmation and sharing UI continue the launch experience.
 
 The page also mounts a generated activity feed and adds a session-only bonus to displayed signup activity. That visual activity should not be read as independently verified signup volume.
+
+<a id="how-the-pieces-connect"></a>
 
 ## <img src="assets/readme/icon-pipeline.svg" width="30" height="30" alt=""/> How the pieces connect
 
@@ -34,6 +40,8 @@ The page also mounts a generated activity feed and adds a session-only bonus to 
 | Count/feed components | Existing Supabase client integration |
 
 The development waitlist call targets `http://localhost:3002/api/waitlist`; production uses `/api/waitlist`. The visitor tracker currently posts to a hard-coded localhost endpoint, so it is not described here as working production analytics.
+
+<a id="run-locally"></a>
 
 ## <img src="assets/readme/icon-terminal.svg" width="30" height="30" alt=""/> Run locally
 
@@ -94,6 +102,8 @@ vercel
 
 The hosted handlers append to the named `Waitlist` and `Visitors` sheet tabs. Verify those tabs and inspect an actual appended row after a test submission. A response marked successful is not sufficient evidence of persistence in this implementation.
 
+<a id="current-implementation-notes"></a>
+
 ## <img src="assets/readme/icon-docs.svg" width="30" height="30" alt=""/> Current implementation notes
 
 <p><picture><source media="(max-width: 600px)" srcset="assets/readme/scope-mobile.svg"/><img src="assets/readme/scope.svg" width="100%" alt="A pre-launch website, simulated activity elements and a need to verify backend persistence."/></picture></p>
@@ -111,6 +121,8 @@ The hosted handlers append to the named `Waitlist` and `Visitors` sheet tabs. Ve
 </details>
 
 Waitlist fields and visitor metadata are data collection, rather than browser-only storage. Review the configured endpoints, third-party requests and privacy-page wording together before collecting real information.
+
+<a id="explore-the-source"></a>
 
 ## <img src="assets/readme/icon-code.svg" width="30" height="30" alt=""/> Explore the source
 
